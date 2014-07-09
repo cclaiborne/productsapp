@@ -1,0 +1,41 @@
+<style type="text/css">
+.productHeader, .products {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid #efefef;
+  margin: 0px;
+}
+.productHeader li, .products li {
+  float: left;
+  list-style: none;
+  padding: 10px;
+  min-width: 80px;
+}
+</style>
+
+<!-- Title -->
+<h1>Products</h1>
+
+<!-- Table header -->
+<ul class="productHeader">
+  <li>Name</li>
+  <li>Description</li>
+  <li>Price</li>
+  <li>Active</li>
+  <li>Quantity</li>
+  <li>Decrement</li>
+  <li>temp link</li>
+</ul>
+
+<% @products.each do |product| %>
+  <ul class="products">
+    <li><%= product.name %></li>
+    <li><%= product.description %></li>
+    <li><%= product.price %></li>
+    <li><%= product.active %></li>
+    <li><%= product.quantity %></li>
+    <!--Link to custom route -->
+    <li><%= link_to "Decrement", decrement_path(product.id), id: product.id, :remote => true, :method => :put %></li>
+  </ul>
+<% end %>
+<%= link_to 'New Product', new_product_path %>

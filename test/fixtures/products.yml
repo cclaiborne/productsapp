@@ -1,0 +1,14 @@
+mug:
+  name: mug
+  description: A lovely mug to enjoy your drink with!
+  price: 14.95
+  active: true
+  quantity: 11
+
+sweater:
+  name: sweater
+  description: A well designed sweater to keep you at the optimal temperature.
+  price: 24.95
+  active: true
+  quantity: 20
+
